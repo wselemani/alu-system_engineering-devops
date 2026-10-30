@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Generate a 4096-bit RSA SSH key pair named school
+
+ssh-keygen -t rsa -b 4096 -f ~/.ssh/school -N "betty"

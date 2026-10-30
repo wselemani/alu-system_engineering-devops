@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Connect to the ALU server using the private key
+
+ssh -i ~/.ssh/school ubuntu@18.171.170.103
