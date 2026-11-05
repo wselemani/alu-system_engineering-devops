@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# Installs HAProxy and load balances web-01 and web-02 with round robin
+sudo apt-get update -y
+sudo apt-get install -y haproxy
+if ! grep -q "http_back" /etc/haproxy/haproxy.cfg; then
+  sudo tee -a /etc/haproxy/haproxy.cfg > /dev/null <<EOF
+
+frontend http_front
+    bind *:80
+    mode http
+    default_backend http_back
+
+backend http_back
+    mode http
+    balance roundrobin
+    server 7401-web-01 18.171.170.103:80 check
+    server 7401-web-02 18.175.133.12:80 check
+EOF
+fi
+echo "ENABLED=1" | sudo tee /etc/default/haproxy > /dev/null
+sudo service haproxy restart
