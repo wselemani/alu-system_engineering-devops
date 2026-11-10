@@ -1,2 +1,1 @@
-\# ALU System Engineering \& DevOps - Firewall
-
+# ALU System Engineering - Firewall Project
