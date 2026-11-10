@@ -1,2 +1,3 @@
 ssh/0-use_a_private_key text eol=lf
 ssh/1-create_ssh_key_pair text eol=lf
+firewall/0-block_all_incoming_traffic_but text eol=lf
