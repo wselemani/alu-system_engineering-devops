@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Fixes Nginx so it runs and listens on port 80
+ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+service nginx restart
